@@ -16,5 +16,5 @@
 !/log/.keep
 /tmp
 
-“# Ignore Spring files.
-/spring/*.pid”
+#Ignore Spring files.
+/spring/*.pid
