@@ -15,11 +15,13 @@ Rails.application.routes.draw do
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'signup'  => 'users#new'
+  get 'edit'  => 'users#edit'
+  
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
-  resources :users
+  resources :users #methods such as delete are implicit
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
