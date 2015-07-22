@@ -25,10 +25,19 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
+  #member makes routes respong to URL containing user id
+  #/users/1/following   and    /users/1/followers
+  resources :users do
+    member do
+      get :following, :followers  #since both showing data
+    end
+  end  
+  
   resources :users #methods such as delete are implicit
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
