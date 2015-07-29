@@ -18,3 +18,8 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+//*Top-bar fix?? else change to v 5.0.3.1
+// window.onload = function() {
+//       $(document).foundation();
+// };
