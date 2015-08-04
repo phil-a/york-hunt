@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  # get 'attempts/new'
+
+  # get 'attempts/show'
+
+  # get 'surveys/index'
+
+  # get 'surveys/create'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -13,7 +21,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static_pages#home'
+  #root 'static_pages#home'
+  root 'surveys#index'
+
   get 'home'    => 'static_pages#home'
   get 'help'   => 'static_pages#help'
   get 'about'   => 'static_pages#about'
@@ -38,6 +48,8 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources 'surveys'
+  resources 'attempts'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
