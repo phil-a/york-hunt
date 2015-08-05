@@ -1,109 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= full_title (yield(:title)) %></title>
-    <%= render 'layouts/shim' %>
+        <title><%= full_title (yield(:title)) %></title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
   </head>
-
   <body>
-
-<div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
-    <nav class="tab-bar">
-      <section class="left-small">
-        <a class="left-off-canvas-toggle menu-icon" ><span></span></a>
-      </section>
-
-      <section class="middle tab-bar-section">
-        <h2 class="title">CSHub</h2>
-      </section>
-
-      <section class="right-small">
-        <a class="right-off-canvas-toggle menu-icon" ><span></span></a>
-      </section>
-    </nav>
-    
-    <aside class="left-off-canvas-menu">
-      <ul class="off-canvas-list">
-        <li><label>Scavenger Hunt</label></li>
-        <% if logged_in? %>
-        <li class="has-submenu"><a href="#">The Psychohistorians</a>
-            <ul class="left-submenu">
-                <li class="back"><a href="#">Back</a></li>
-                <li><label>Level 1</label></li>
-                <li><a href="#">Link 1</a></li>
-                <li class="has-submenu"><a href="#">Link 2 w/ submenu</a>
-                    <ul class="left-submenu">
-                        <li class="back"><a href="#">Back</a></li>
-                        <li><label>Level 2</label></li>
-                        <li><a href="#">...</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">...</a></li>
-            </ul>
-        </li>
-        <li><a href="#">The Encyclopedists</a></li>
-        <li><a href="#">The Mayors</a></li>
-        <li><a href="#">The Traders</a></li>
-        <li><a href="#">The Merchant Princes</a></li>
-        <% else %>
-        <p>Please login to access Scavenger Hunt</p>
-        <% end %>
-      </ul>
-    </aside>
-
-    <aside class="right-off-canvas-menu">
-      <ul class="off-canvas-list">
-        <li><label>Your Account</label></li>
-          <% if logged_in? %>
-            <li><%= link_to "Profile", current_user %></li>
-            <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-            <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-          <li><label>General</label></li>
-            <li><%= link_to "All users", users_path %></li>
-          <% else %>
-            <li><%= link_to "Log in", login_path %></li>
-          <% end %>
-              <li><%= link_to "Home", root_path %></li>
-              <li><%= link_to "Help", help_path %></li>
-      </ul>
-    </aside>
-
-    <!--Content here -->
-
-    <section class="main-section">
-      
-       <div class="container">
-    
-        <!-- Content should go here but cutting off -->
-    
-       </div>
-
-    </section>
-
-    <!--Content end -->
-
-
-  <a class="exit-off-canvas"></a>
-
-  </div><!-- inner wrap-->
-</div><!-- off canvas wrap-->
-    
-    <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
-    <% debug(params) if Rails.env.development? %>
-
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+      <% debug(params) if Rails.env.development? %>
+    </div>
   </body>
-
 </html>

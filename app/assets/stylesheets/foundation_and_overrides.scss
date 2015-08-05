@@ -1486,3 +1486,40 @@ $include-html-global-classes: $include-html-classes;
 // $include-legacy-visibility-classes: true;
 
 @import 'foundation';
+.move-right>.inner-wrap {
+  -ms-transform: none;
+-webkit-transform: none;
+-moz-transform: none;
+-ms-transform: none;
+-o-transform: none;
+transform: none;
+  margin-left: 140px;
+}
+
+.inner-wrap {
+  width: auto;
+}
+
+.left-off-canvas-menu {
+  -ms-transform: none;
+-webkit-transform: none;
+-moz-transform: none;
+-ms-transform: none;
+-o-transform: none;
+transform: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: auto;
+  right: auto;
+  width: 0;  
+  height: 100%;
+}
+
+.move-right .left-off-canvas-menu {
+  width: 140px;
+}
+
+.exit-off-canvas {
+  display: none;
+}

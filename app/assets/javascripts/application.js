@@ -11,13 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require foundation
-//= require bootstrap
-//= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation()});
+//= require turbolinks
 
 //*Top-bar fix?? else change to v 5.0.3.1
 // window.onload = function() {
