@@ -1,7 +1,16 @@
 <% provide(:title, "Help") %>
 <h1>Help</h1>
-<p>Get help on the Ruby on Rail Tutorial at the
-    <a href="http://www.railstutorial.org/#help">Rails Tutorial help section</a>.
-    To get help on this sample app, see the
-    <a href="http://www.railstutorial.org/book">Ruby on Rails Tutorial book</a>
-</p>
+
+These are the instructions for the <a href = "https://cshub.ca/">CSHub</a> Scavenger Hunt app.
+
+<ol>
+<li>Receive your login information (one per team).</li><br>
+<li><%= link_to "Login", login_path, :class => "item", :id => "" %> using provided username and password.</li><br>
+<li><%= link_to "All Teams", root_path, :class => "item", :id => "" %><br>
+- Your team is automatically assigned to follow all the opposing teams and receive live updates to how they are doing.</li>
+<ul><li>You post your answers here and attach required pictures if necessary (order does not matter).</li></ul><br>
+<li><%= link_to "My Team", current_user, :class => "item", :id => "" %> - Review your teams answers and see how other team members are doing.</li><br>
+<li><%= link_to "Quiz", surveys_path, :class => "item", :id => "" %> - Displays a list of questions for the Scavenger Hunt arranged by location.</li><br>
+</ol>
+
+<p>*** Note: You must be logged in to see how other teams are doing.</p>

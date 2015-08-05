@@ -10,7 +10,7 @@ gem 'fog',                     '1.23.0'
 gem 'will_paginate',           '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass',          '3.2.0.0'
-gem 'foundation-rails',        '5.5.2.1'        
+gem 'foundation-rails',        '5.5.2.1'  
 gem 'sass-rails',              '5.0.2'
 gem 'uglifier',                '2.5.3'
 gem 'coffee-rails',            '4.1.0'
@@ -26,6 +26,8 @@ group :development, :test do
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
+  gem 'rails_layout'
+
 end
 
 group :test do

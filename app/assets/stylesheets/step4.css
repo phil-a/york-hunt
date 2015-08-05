@@ -219,11 +219,10 @@ a {
 }
 
 body {
-  color: #333;
   position: relative;
   width: 100%;
   min-width: 20em;
-  background: #333333;
+  background: #fff;
 }
 
 .highlight {

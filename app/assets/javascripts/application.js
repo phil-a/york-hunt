@@ -2,7 +2,7 @@
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
+// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
 //
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // compiled file.
@@ -11,15 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
+//= require turbolinks
 //= require foundation
 //= require_tree .
-
-$(function(){ $(document).foundation()});
-//= require turbolinks
-
-//*Top-bar fix?? else change to v 5.0.3.1
-// window.onload = function() {
-//       $(document).foundation();
-// };
+$(function() {
+  $(document).foundation();
+});

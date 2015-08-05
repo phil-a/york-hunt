@@ -528,7 +528,7 @@ $include-html-global-classes: $include-html-classes;
 // 08. Dropdown
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-dropdown-classes: $include-html-classes;
+ $include-html-dropdown-classes: $include-html-classes;
 
 // We use these to controls height and width styles.
 // $f-dropdown-max-width: 200px;
@@ -1433,14 +1433,14 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
-// $topbar-dropdown-link-color: $white;
+// $topbar-dropdown-bg: black;
+// $topbar-dropdown-link-color: white;
 // $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
-// $topbar-dropdown-link-bg: $oil;
-// $topbar-dropdown-link-bg-hover: $jet;
-// $topbar-dropdown-link-weight: $font-weight-normal;
+// $topbar-dropdown-link-bg: gray;
+// $topbar-dropdown-link-bg-hover: gray;
+ //$topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: $white;
+// $topbar-dropdown-toggle-color: white;
 // $topbar-dropdown-toggle-alpha: .4;
 
 // $topbar-dropdown-label-color: $monsoon;
@@ -1486,40 +1486,3 @@ $include-html-global-classes: $include-html-classes;
 // $include-legacy-visibility-classes: true;
 
 @import 'foundation';
-.move-right>.inner-wrap {
-  -ms-transform: none;
--webkit-transform: none;
--moz-transform: none;
--ms-transform: none;
--o-transform: none;
-transform: none;
-  margin-left: 140px;
-}
-
-.inner-wrap {
-  width: auto;
-}
-
-.left-off-canvas-menu {
-  -ms-transform: none;
--webkit-transform: none;
--moz-transform: none;
--ms-transform: none;
--o-transform: none;
-transform: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: auto;
-  right: auto;
-  width: 0;  
-  height: 100%;
-}
-
-.move-right .left-off-canvas-menu {
-  width: 140px;
-}
-
-.exit-off-canvas {
-  display: none;
-}
