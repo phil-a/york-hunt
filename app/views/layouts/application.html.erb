@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,7 +13,27 @@
   </head>
   <body>
     <header>
-      <%= render 'layouts/navigation' %>
+<div class="icon-bar four-up">
+  
+  
+<%= link_to "<h4><span class='glyphicon glyphicon-info-sign' aria-hidden='true'><br>Help</span></h4>".html_safe, main_app.help_path, :class => "item", :id => "" %>
+
+      <% if logged_in? %>
+        <%= link_to "<h4><span class='glyphicon glyphicon-search' aria-hidden='true'><br>Quiz</span></h4>".html_safe, main_app.rapidfire_path, :class => "item" %>
+        <%= link_to "<h4><span class='glyphicon glyphicon-eye-open' aria-hidden='true'><br>Teams</span></h4>".html_safe, main_app.root_path, :class => "item" %>        
+        <%#= link_to "<h4><span class='glyphicon glyphicon-check' aria-hidden='true'><br>My Team</span></h4>".html_safe, current_user, :class => "item" %>  
+        <%= link_to "<h4><span class='glyphicon glyphicon-log-out' aria-hidden='true'><br>Logout</span></h4>".html_safe, main_app.logout_path, method: "delete", :class => "item" %>        
+
+      <% else %>
+        <%= link_to "<h4><span class='glyphicon glyphicon-log-in' aria-hidden='true'><br>Login</span></h4>".html_safe, login_path, :class => "item" %>        
+      <% end %>
+    
+
+
+
+</div>
+      
+      
     </header>
     <main role="main">
        <%= render 'layouts/messages' %>
