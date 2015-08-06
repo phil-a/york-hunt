@@ -1,23 +1,18 @@
-<h2 class="survey-title">
-  <%= @survey.name %>
-  <p><small><%= @attempt.survey.description %></small></p>
-</h2>
-<%= form_for(@attempt, url: attempt_scope(@attempt)) do |f| %>
-  <%= hidden_field_tag :survey_id, @survey.id %>
-  <ol class="questions">
-    <%= f.fields_for :answers, get_answer_fields(@attempt) do |answer_fields| %>
-      <li>
-        <% question = answer_fields.object.question %>
-        <p class="question"><%= question.text %></p>
-        <ul class="options">
-          <%= collection_radio_buttons('survey_attempt[answers_attributes]', question.id, question.options, :id, :text) do |b| %>
-            <li class="radio">
-              <%= b.label { b.radio_button + b.text } %>
-            </li>
-          <% end %>
-        </ul>
-      </li>
-    <% end -%>
-  </ol>
-  <%= f.submit "Submit", class: 'btn btn-default' %>
+<h1>Survey <%= @survey.name %></h1>
+<%= form_for(@attempt, :url => attempt_scope(@attempt)) do |f| %>
+  <%= f.fields_for :answers do |builder| %>
+    <ul>
+      <% @survey.questions.each_with_index do |question, index| %>
+        <li>
+          <p><%= question.text %></p>
+          <%= hidden_field_tag "survey_attempt[answers_attributes][#{index}][question_id]", question.id %>
+          <% question.options.each do |option| %>
+            <%= check_box_tag "survey_attempt[answers_attributes][#{index}][option_id][]", option.id %>
+            <%= option.text %> <br/ >
+          <% end -%>
+        </li>
+      <% end -%>
+    </ul>
+  <% end -%>
+  <%= f.submit "Submit" %>
 <% end -%>
