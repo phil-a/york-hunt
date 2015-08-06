@@ -19,6 +19,7 @@ gem 'jquery-turbolinks'
 gem 'turbolinks',              '2.3.0'
 gem 'jbuilder',                '2.2.3'
 gem "survey",                   "~> 0.1"
+gem 'rapidfire'
 gem 'sdoc',                    '0.4.0', group: :doc
 
 group :development, :test do

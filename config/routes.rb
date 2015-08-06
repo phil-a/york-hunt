@@ -50,6 +50,10 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources 'surveys'
   resources 'attempts'
+  
+  
+  
+  mount Rapidfire::Engine => "/rapidfire"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
