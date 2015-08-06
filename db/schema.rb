@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804185552) do
+ActiveRecord::Schema.define(version: 20150805230338) do
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20150804185552) do
     t.boolean  "active",          default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "survey_type"
   end
 
   create_table "users", force: :cascade do |t|
