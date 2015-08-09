@@ -16,13 +16,16 @@
             <tr>
               <th>Option</th>
               <th>Count</th>
+              <th>User</th>
             </tr>
           </thead>
           <tbody>
-            <%- result.results.each do |option, count| %>
+            <% crnt = User.find(2).name %>
+            <%- result.results.each do |option, count, crnt | %>
               <tr>
                 <td><%= option %></td>
                 <td><%= count %></td>
+                <td><%= User.find(2).name %></td>              
               </tr>
             <% end %>
           </tbody>
