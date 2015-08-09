@@ -42,13 +42,16 @@
             </tr>
           </thead>
           <tbody>
+          <% cnt = 1 %>  
           <%- (1..Rapidfire::AnswerGroup.count).each do |i|  %>
               <tr>
                   <td><%= User.find(Rapidfire::AnswerGroup.find(i).user_id).name %></td>
                   <td>
-                    <%- (1..Rapidfire::Answer.where(:answer_group_id => i).count).each do |j|  %>
-                      <%= " [ " + Rapidfire::Answer.where(:answer_group_id => i).find_by_question_id(j).answer_text + " ] " %>
-                    <% end %>  
+                      <%- (cnt..(Rapidfire::Answer).count).each do |j|  %>
+                        <% break if ((Rapidfire::Answer.where(:answer_group_id => i).find_by_id(j)) == nil) %>
+                        <%= " [ " + Rapidfire::Answer.where(:answer_group_id => i).find_by_id(j).answer_text + " ] " %>
+                        <% cnt = cnt + 1 %>
+                      <% end %>
                   </td>
               </tr>
           <% end %>
