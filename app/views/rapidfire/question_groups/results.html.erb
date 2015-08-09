@@ -1,5 +1,5 @@
 <h1>Results</h1>
-
+<h3>Anonymous Results</h3>
 <%- @question_group_results.each do |result| %>
   <div>
     <h4><%= result.question.question_text %></h4>
@@ -16,20 +16,42 @@
             <tr>
               <th>Option</th>
               <th>Count</th>
-              <th>User</th>
             </tr>
           </thead>
           <tbody>
-            <% crnt = User.find(2).name %>
-            <%- result.results.each do |option, count, crnt | %>
+            <%- result.results.each do |option, count| %>
               <tr>
-                <td><%= option %></td>
-                <td><%= count %></td>
-                <td><%= User.find(2).name %></td>              
+                  <td><%= option %></td>
+                  <td><%= count %></td>
               </tr>
+             
             <% end %>
           </tbody>
         </table>
       <% end %>
   </div>
 <% end %>
+
+<hr>
+<h3>All Attempts By Teams</h3>
+  <table>
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>Answer_text</th>
+            </tr>
+          </thead>
+          <tbody>
+          <%- (1..Rapidfire::AnswerGroup.count).each do |i|  %>
+              <tr>
+                  <td><%= User.find(Rapidfire::AnswerGroup.find(i).user_id).name %></td>
+                  <td>
+                    <%- (1..Rapidfire::Answer.where(:answer_group_id => i).count).each do |j|  %>
+                      <%= " [ " + Rapidfire::Answer.where(:answer_group_id => i).find_by_question_id(j).answer_text + " ] " %>
+                    <% end %>  
+                  </td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+    

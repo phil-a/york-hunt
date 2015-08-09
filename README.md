@@ -18,6 +18,6 @@ This is a 'Scavenger Hunt' type application created for the Computing Students' 
 * ~~Add email authentication and password reset.~~
 * ~~Create microposts and link microposts to user model.~~
 * ~~Implement rapidfire gem for Quiz section.~~
-* Add answer view to display answered questions by user.
+* ~~Add answer view to display answered questions by user.~~
 * Validate posted team answer against correct answers on database.
 * Post answer (correct/incorrect) to feed (along with random motivating message)
