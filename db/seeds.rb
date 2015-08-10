@@ -48,3 +48,19 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+#Solutions
+
+# solutions = []
+
+# solutions << Solution.create!(question_id: 1,
+#                  correct_answer_text: "1959")
+
+# solutions << Solution.create!(question_id: 2,
+#                  correct_answer_text: "Mamdouh Shoukri")
+
+# solutions << Solution.create!(question_id: 3,
+#                  correct_answer_text: "Lion")
+
+# solutions << Solution.create!(question_id: 4,
+#                  correct_answer_text: "Group of Seven")
