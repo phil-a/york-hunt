@@ -23,7 +23,7 @@ User.create!(name:  "Philip",
              activated_at: Time.zone.now)
              
 User.create!(name:  "House Stark",
-             email: "house.stark@gmail.com",
+             email: "yorku.house.stark@gmail.com",
              password:              "test123",
              password_confirmation: "test123",
              admin: false,
@@ -31,7 +31,7 @@ User.create!(name:  "House Stark",
              activated_at: Time.zone.now)
 
 User.create!(name:  "House Lannister",
-             email: "house.lannister@gmail.com",
+             email: "yorku.house.lannister@gmail.com",
              password:              "test123",
              password_confirmation: "test123",
              admin: false,
@@ -39,7 +39,7 @@ User.create!(name:  "House Lannister",
              activated_at: Time.zone.now)
 
 User.create!(name:  "House Targaryen",
-             email: "house.targaryen@gmail.com",
+             email: "yorku.house.targaryen@gmail.com",
              password:              "test123",
              password_confirmation: "test123",
              admin: false,
@@ -47,7 +47,7 @@ User.create!(name:  "House Targaryen",
              activated_at: Time.zone.now)
 
 User.create!(name:  "House Baratheon",
-             email: "house.baratheon@gmail.com",
+             email: "yorku.house.baratheon@gmail.com",
              password:              "test123",
              password_confirmation: "test123",
              admin: false,
