@@ -40,5 +40,6 @@ module Rapidfire
         answer.validates_length_of :answer_text, min_max
       end
     end
+    
   end
 end
