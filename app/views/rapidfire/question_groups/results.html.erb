@@ -49,7 +49,7 @@
                   <td>
                       <%- (cnt..(Rapidfire::Answer).count).each do |j|  %>
                         <% break if ((Rapidfire::Answer.where(:answer_group_id => i).find_by_id(j)) == nil) %>
-                        <%= " [ " + Rapidfire::Answer.where(:answer_group_id => i).find_by_id(j).answer_text + " ] " %>
+                        <%= " [ " + Rapidfire::Answer.where(:answer_group_id => i).find_by_id(j).answer_text + " = " + Rapidfire::Answer.where(:answer_group_id => i).find_by_id(j).correct? + " ] " %>
                         <% cnt = cnt + 1 %>
                       <% end %>
                   </td>
