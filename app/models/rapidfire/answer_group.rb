@@ -10,7 +10,13 @@ module Rapidfire
 
     after_save do
         user = User.find_by(id: (self.user_id))
-        user.microposts.create!(content: user.name + " posted an answer!")
+        answers = Rapidfire::Answer.where(answer_group_id: self.id)
+        answers_cnt = answers.count - 1
+        answers_text = []
+        for i in (0..answers_cnt)
+          answers_text << answers[i].answer_text + answers[i].correct?
+        end
+        user.microposts.create!(content: user.name + " posted an answer!" + answers_text.to_s)
     end
     
   end
