@@ -3,9 +3,12 @@
 
 <%= form_for([@question_group, @answer_group_builder]) do |f| %>
   <%- @answer_group_builder.answers.each do |answer| %>
-    <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
-      <%= render_answer_form_helper(answer, answer_form) %>
+    <fieldset>
+     <%= f.fields_for("#{answer.question.id}", answer) do |answer_form| %>
+     <%= answer.question.id.to_s + "." %>
+     <h5><%= render_answer_form_helper(answer, answer_form) %></h5>
     <% end %>
+    </fieldset><br>
   <% end %>
-  <%= f.submit "Save" %>
+  <%= f.submit "Submit", class: "button success radius expand" %>
 <% end %>
