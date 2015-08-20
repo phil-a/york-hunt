@@ -1,4 +1,9 @@
-<h2>Please answer these Questions</h2>
+<nav class="breadcrumbs">
+    <a href="/rapidfire/">Quiz</a>
+    <a class="unavailable" href="/rapidfire/">Answer Questions</a>
+    <a class="unavailable" href="/rapidfire/"><%= @question_group.name %></a>
+</nav>
+<h2>Category: <%= @question_group.name %></h2>
 <hr/>
 
 <%= form_for([@question_group, @answer_group_builder]) do |f| %>

@@ -1,4 +1,10 @@
+
+
 <% provide(:title, @user.name) %>
+<nav class="breadcrumbs">
+  <a href="/">Teams</a>
+   <a href="/"><%= @user.name %></a>
+</nav>
 <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
