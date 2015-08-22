@@ -1,10 +1,10 @@
 <footer class="footer">
   <small>
-    The <a href="#">Scavenger Hunt</a> by <a href="https://cshub.ca/">CSHub</a>
+    The <a href="#">Scavenger Hunt</a> by <a href="https://cshub.ca/"><%= image_tag "cshub.png", size: "75x75" %></a>
   </small>
   <nav>
     <ul>
-      <li><a href="/about" data-reveal-id="aboutModal">About</a></li>
+      <li><a class = "waves-effect waves-light btn" href="/about" data-reveal-id="aboutModal" style = "margin-top: 15px;">About</a></li>
       <div id="aboutModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <h2 id="modalTitle">A little about us...</h2><hr>
         <p class="lead">We are the York University Computing Students' Hub</p>
@@ -17,7 +17,7 @@
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
       </div>
 
-      <li><a href="/contact" data-reveal-id="contactModal">Contact</a></li>
+      <li><a class = "waves-effect waves-light btn" href="/contact" data-reveal-id="contactModal" style = "margin-top: 15px;">Contact</a></li>
       <div id="contactModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <h2 id="modalTitle">Reach out to us!</h2><hr>
         <p class="lead">We want feedback. Right now.</p>
@@ -32,6 +32,6 @@
       <!--<li><#%= link_to "About", main_app.about_path %></li>
       <li><#%= link_to "Contact", main_app.contact_path %></li>
       -->
-      <li><a href="https://news.ycombinator.com/news">News</a></li>
+      <li><a class = "waves-effect waves-light btn" href="https://news.ycombinator.com/news" style = "margin-top: 15px;">News</a></li><br>
     </ul>
   </nav> </footer>

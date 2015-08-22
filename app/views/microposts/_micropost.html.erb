@@ -1,14 +1,28 @@
 <li id="<%= micropost.id %>">
-  <%= link_to gravatar_for(micropost.user, size: 60), micropost.user %>
-  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
-  <span class="content"><%= micropost.content %>
-  <%= image_tag micropost.picture.url if micropost.picture? %>
-  </span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-    <% if current_user?(micropost.user) %>
-      <%= link_to "delete", micropost, method: :delete,
+
+<div class="grid-example col s12">
+          
+  <div class="card hoverable">
+    <div class="card-image waves-effect waves-block waves-light">
+  <% if micropost.picture? %>
+    <%= image_tag micropost.picture.url, width: 650 %>
+  <% else %>  
+    <%= link_to gravatar_for(micropost.user, size: 300), micropost.user %>
+  <% end %>
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"><span class="user"><%= link_to micropost.user.name, micropost.user %><i class="material-icons right">View</i></span>
+      <p class = "truncate"> <%= micropost.content %></p>
+       <p> <span class="timestamp"> Posted  <%= time_ago_in_words(micropost.created_at) %> ago.</span></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><%= link_to micropost.user.name, micropost.user %><i class="material-icons right">close</i></span>
+        <%= micropost.content %>
+              <span class="timestamp"> Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+              <% if current_user?(micropost.user) %>
+                <%= link_to "delete", micropost, method: :delete,
                                        data: { confirm: "You sure?" } %>
-    <% end %>
-  </span>
+              <% end %>
+              </span>
+    </div>
 </li>

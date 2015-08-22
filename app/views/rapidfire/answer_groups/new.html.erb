@@ -15,5 +15,6 @@
     <% end %>
     </fieldset><br>
   <% end %>
-  <%= f.submit "Submit", class: "button success radius expand" %>
+  <%= f.submit "Submit", class: "button success radius expand", onclick: "Materialize.toast('Answer Submitted', 4000)" %>
+
 <% end %>
