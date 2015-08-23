@@ -18,3 +18,9 @@
   <%= f.submit "Submit", class: "button success radius expand", onclick: "Materialize.toast('Answer Submitted', 4000)" %>
 
 <% end %>
+
+<script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+</script>  
