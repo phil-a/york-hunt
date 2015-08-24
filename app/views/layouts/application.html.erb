@@ -15,16 +15,16 @@
   <body>
     <header>
 
-     <div class="icon-bar four-up z-depth-2" style="margin-bottom: 15px;">
-       <%= link_to "<h5><i class='fi-info'></i>Help</h5>".html_safe, main_app.help_path,  :class => "item", :id => "" %>
+     <div class="icon-bar four-up z-depth-2 waves-effect waves-light" style="margin-bottom: 15px;">
+       <%= link_to "<h5><i class='fi-info' style='font-size: 2.0em;'></i>Help</h5>".html_safe, main_app.help_path,  :class => "item", :id => "" %>
 
           <% if logged_in? %>
-            <%= link_to "<h5><i class='fi-puzzle'></i>Hunt</h5>".html_safe, main_app.rapidfire_path, :class => "item" %>
-            <%= link_to "<h5><i class='fi-results-demographics'></i>Teams</h5>".html_safe, main_app.root_path, :class => "item" %>
+            <%= link_to "<h5><i class='fi-puzzle' style='font-size: 2.0em;'></i>Hunt</h5>".html_safe, main_app.rapidfire_path, :class => "item" %>
+            <%= link_to "<h5><i class='fi-results-demographics' style='font-size: 2.0em;'></i>Teams</h5>".html_safe, main_app.root_path, :class => "item" %>
             <%#= link_to "<h4><span class='glyphicon glyphicon-check' aria-hidden='true'><br>My Team</span></h4>".html_safe, current_user, :class => "item" %>
-            <%= link_to "<h5><i class='fi-power'></i>Quit</h5>".html_safe, main_app.logout_path, method: "delete", :class => "item" %>
+            <%= link_to "<h5><i class='fi-power' style='font-size: 2.0em;'></i>Quit</h5>".html_safe, main_app.logout_path, method: "delete", :class => "item" %>
           <% else %>
-             <%= link_to "<h5><i class='fi-power'></i>Login</h5>".html_safe, login_path, :class => "item" %>
+             <%= link_to "<h5><i class='fi-power' style='font-size: 2.0em;'></i>Login</h5>".html_safe, login_path, :class => "item" %>
           <% end %>
       </div>
 
