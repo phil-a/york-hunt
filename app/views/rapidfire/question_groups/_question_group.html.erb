@@ -8,10 +8,10 @@
   </td>
   <td>
     <ul class="horizontal-list">
-      <li><%= link_to "Answer Questions", new_question_group_answer_group_path(question_group), class: "waves-effect waves-light btn" %></li><br>
+      <li><%= link_to '<i class="large material-icons">launch</i> Answer Questions'.html_safe, new_question_group_answer_group_path(question_group), class: "waves-effect waves-light btn" %></li><br>
       <% if can_administer? %>
-        <li><%= link_to "Results", [:results, question_group], class: "waves-effect waves-light btn" %></li><br>
-        <li><%= link_to "Delete", [question_group], method: :delete, class: "waves-effect waves-light btn red" %></li>
+        <li><%= link_to '<i class="large material-icons">assessment</i> Results'.html_safe, [:results, question_group], class: "waves-effect waves-light btn" %></li><br>
+        <li><%= link_to '<i class="large material-icons">delete</i> Delete'.html_safe, [question_group], method: :delete, class: "waves-effect waves-light btn red" %></li>
       <% end %>
     </ul>
   </td>

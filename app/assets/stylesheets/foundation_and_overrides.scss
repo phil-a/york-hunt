@@ -710,11 +710,11 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to style the icon-bar and items
-// $icon-bar-bg: $oil;
+ $icon-bar-bg: #00acc1!important;
 // $icon-bar-font-color: $white;
 // $icon-bar-font-color-hover: $icon-bar-font-color;
 // $icon-bar-font-size: 1rem;
-// $icon-bar-hover-color: $primary-color;
+ $icon-bar-hover-color: #80deea!important;
 // $icon-bar-icon-color: $white;
 // $icon-bar-icon-color-hover: $icon-bar-icon-color;
 // $icon-bar-icon-size: 1.875rem;

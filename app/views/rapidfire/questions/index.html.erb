@@ -1,7 +1,7 @@
       <%= render 'layouts/navigation' %>
 <h2>
   Questions
-  <%= link_to "+ New", new_question_group_question_path(@question_group), class: "waves-effect waves-light btn-floating btn-large btn deep-orange" %>
+  <%= link_to '<i class="material-icons">add</i>'.html_safe, new_question_group_question_path(@question_group), class: "waves-effect waves-light btn-floating btn-large btn deep-orange" %>
 </h2>
 <hr/>
 

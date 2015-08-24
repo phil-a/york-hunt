@@ -1,21 +1,39 @@
 <% provide(:title, "Help") %>
 <h1>Help</h1>
 
-These are the instructions for the <a href = "https://cshub.ca/">CSHub</a> Scavenger Hunt app.
-<p>
-<ol>
-<li>&#10147 Receive your login information (one per team).</li><br>
-<li><%= link_to "Login", login_path, :class => "waves-effect waves-teal btn-flat btn item", :id => "" %> using provided username and password.</li><br>
-<li><%= link_to "Teams", root_path, :class => "waves-effect waves-teal btn-flat btn item", :id => "" %>
-- Your team is automatically assigned to follow all the opposing teams and receive live updates to how they are doing.</li>
-<ul><li>&#10147 Everytime you answer a group of questions, they are posted here with feedback. You can also communicate with other teams and post pictures if you want.</li></ul>
-<ul><li>&#10147 Correctness of questions will be displayed with a &#9989 or &#10060 in the order which they were listed.</li></ul>
-<li>&#10147 You may also click on any team link to view only their progress.</li>
-<p>*** Note: You must be logged in to see how other teams are doing.</p><br>
-<li><%= link_to "Quiz", rapidfire_path, :class => "waves-effect waves-teal btn-flat btn item", :id => "" %> - Displays a list of questions for the Scavenger Hunt arranged by location.</li>
-<ul><li>&#10147 Select the location which you are near and click answer questions. </li></ul>
-<ul><li>&#10147 Multiple people can be logged into the same team account, so how you work together to win is up to you.</li></ul>
-<ul><li>&#10147 If you decide to split up, remember that you have to meet back up to input all answers on one device.</li></ul>
-<li>&#10147 Good luck and have fun!</li>
-</ol>
-</p>
+
+  <ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>Logging in</div>
+      <div class="collapsible-body"><p>Receive your login information (one per team).<br>
+      <%= link_to "Login", login_path, :class => "waves-effect waves-teal btn-flat btn item", :id => "" %> using provided username and password.</p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>The Hunt</div>
+      <div class="collapsible-body"><p> 
+            <%= link_to "Question Groups", rapidfire_path, :class => "waves-effect waves-teal btn-flat btn item", :id => "" %> are based on location. Choose where you are hunting and click 'Answer Questions'
+            <br><br>Multiple people can be logged into the same team account, so how you work together to win is up to you.
+            <br><br>If you decide to split up, remember that you have to meet back up to input all answers on one device.
+      </p>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Teams</div>
+      <div class="collapsible-body"><p><%= link_to "Teams", root_path, :class => "waves-effect waves-teal btn-flat btn item", :id => "" %> are automatically assigned to follow all other teams, so you will see live updates of how the others are doing.
+      <br><br>When you submit answers, it is evaluated and auto-posted for everyone to see (&#9989 or &#10060 in the same question order).
+      <br><br>Feel free to talk smack to other teams, as well as post pictures.
+      
+      </p></div>
+    </li>
+  </ul>
+  
+  
+  
+  <script>
+  $(document).ready(function(){
+    $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
+  });      
+  </script>

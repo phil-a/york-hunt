@@ -6,6 +6,7 @@
     <title><%= content_for?(:title) ? yield(:title) : ".SH" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Sample App" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag 'vendor/modernizr' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -13,28 +14,65 @@
   </head>
   <body>
     <header>
-      <div class="icon-bar four-up">
-        <%= link_to "<h4><span class='glyphicon glyphicon-info-sign' aria-hidden='true'><br>Help</span></h4>".html_safe, main_app.help_path,  :class => "item", :id => "" %>
+
+     <div class="icon-bar four-up">
+        <%= link_to "<h5><span class='glyphicon glyphicon-info-sign' aria-hidden='true'><br>Help</span></h5>".html_safe, main_app.help_path,  :class => "item", :id => "" %>
 
           <% if logged_in? %>
-            <%= link_to "<h4><span class='glyphicon glyphicon-search' aria-hidden='true'><br>Quiz</span></h4>".html_safe, main_app.rapidfire_path, :class => "item" %>
-            <%= link_to "<h4><span class='glyphicon glyphicon-eye-open' aria-hidden='true'><br>Teams</span></h4>".html_safe, main_app.root_path, :class => "item" %>
+            <%= link_to "<h5><span class='glyphicon glyphicon-search' aria-hidden='true'><br>Quiz</span></h5>".html_safe, main_app.rapidfire_path, :class => "item" %>
+            <%= link_to "<h5><span class='glyphicon glyphicon-eye-open' aria-hidden='true'><br>Teams</span></h5>".html_safe, main_app.root_path, :class => "item" %>
             <%#= link_to "<h4><span class='glyphicon glyphicon-check' aria-hidden='true'><br>My Team</span></h4>".html_safe, current_user, :class => "item" %>
-            <%= link_to "<h4><span class='glyphicon glyphicon-log-out' aria-hidden='true'><br>Logout</span></h4>".html_safe, main_app.logout_path, method: "delete", :class => "item" %>
+            <%= link_to "<h5><span class='glyphicon glyphicon-log-out' aria-hidden='true'><br>Logout</span></h5>".html_safe, main_app.logout_path, method: "delete", :class => "item" %>
           <% else %>
-            <%= link_to "<h4><span class='glyphicon glyphicon-log-in' aria-hidden='true'><br>Login</span></h4>".html_safe, login_path, :class => "item" %>
+            <%= link_to "<h5><span class='glyphicon glyphicon-log-in' aria-hidden='true'><br>Login</span></h5>".html_safe, login_path, :class => "item" %>
           <% end %>
       </div>
+
+
+<!--
+<div class="navbar-fixed">
+        <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo"><#%= image_tag "cshub_logo.png", size: "225x50" %></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><#%= link_to "<h4><span class='glyphicon glyphicon-info-sign' aria-hidden='true'>Help</span></h4>".html_safe, main_app.help_path,  :class => "item", :id => "" %></li>
+        <#% if logged_in? %>
+          <li> <#%= link_to "<h4><span class='glyphicon glyphicon-search' aria-hidden='true'>Quiz</span></h4>".html_safe, main_app.rapidfire_path, :class => "item" %></li>
+          <li> <#%= link_to "<h4><span class='glyphicon glyphicon-eye-open' aria-hidden='true'>Teams</span></h4>".html_safe, main_app.root_path, :class => "item" %></li>
+          <li><#%= link_to "<h4><span class='glyphicon glyphicon-log-out' aria-hidden='true'>Logout</span></h4>".html_safe, main_app.logout_path, method: "delete", :class => "item" %></li>
+        <#% else %>
+          <li> <#%= link_to "<h4><span class='glyphicon glyphicon-log-in' aria-hidden='true'>Login</span></h4>".html_safe, login_path, :class => "item" %></li>
+        <#% end %>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><#%= link_to "<h5><span class='glyphicon glyphicon-info-sign' aria-hidden='true'> Help</span></h5>".html_safe, main_app.help_path,  :class => "item", :id => "" %></li>
+        <#% if logged_in? %>
+          <li> <#%= link_to "<h5><span class='glyphicon glyphicon-search' aria-hidden='true'> Quiz</span></h5>".html_safe, main_app.rapidfire_path, :class => "item" %></li>
+          <li> <#%= link_to "<h5><span class='glyphicon glyphicon-eye-open' aria-hidden='true'> Teams</span></h5>".html_safe, main_app.root_path, :class => "item" %></li>
+          <li><#%= link_to "<h5><span class='glyphicon glyphicon-log-out' aria-hidden='true'> Logout</span></h5>".html_safe, main_app.logout_path, method: "delete", :class => "item" %></li>
+        <#% else %>
+          <li> <#%= link_to "<h5><span class='glyphicon glyphicon-log-in' aria-hidden='true'> Login</span></h5>".html_safe, login_path, :class => "item" %></li>
+        <#% end %>
+      </ul>
+    </div>
+  </nav>
+</div>          
+-->
+      
     </header>
     <main role="main">
       <%= render 'layouts/messages' %>
       <%= yield %>
     </main>
       <%= render 'layouts/footer' %>
+            <i class="material-icons">add</i>
+
 <script>
   $(document).ready(function() {
     $('.materialboxed').materialbox();
     $('.modal-trigger').leanModal();
+     $(".button-collapse").sideNav();
   });
 </script>            
   </body>
