@@ -1,17 +1,17 @@
 <tr id= "question_group_<%= question_group.id %>">
   <td>
     <% if can_administer? %>
-      <%= link_to question_group.name, question_group_questions_path(question_group) %>
+      <%= link_to question_group.name, question_group_questions_path(question_group), class: "waves-effect waves-light btn"%>
     <% else %>
       <%= question_group.name %>
     <% end %>
   </td>
   <td>
     <ul class="horizontal-list">
-      <li><%= link_to "Answer Questions", new_question_group_answer_group_path(question_group) %></li>
+      <li><%= link_to "Answer Questions", new_question_group_answer_group_path(question_group), class: "waves-effect waves-light btn" %></li><br>
       <% if can_administer? %>
-        <li><%= link_to "Results", [:results, question_group] %></li>
-        <li><%= link_to "Delete", [question_group], method: :delete %></li>
+        <li><%= link_to "Results", [:results, question_group], class: "waves-effect waves-light btn" %></li><br>
+        <li><%= link_to "Delete", [question_group], method: :delete, class: "waves-effect waves-light btn red" %></li>
       <% end %>
     </ul>
   </td>

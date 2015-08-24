@@ -1,10 +1,24 @@
 <footer class="footer">
-  <small>
-    The <a href="#">Scavenger Hunt</a> by <a href="https://cshub.ca/"><%= image_tag "cshub.png", size: "75x75" %></a>
-  </small>
-  <nav>
-    <ul>
-      <li><a class = "waves-effect waves-light btn" href="/about" data-reveal-id="aboutModal" style = "margin-top: 15px;">About</a></li>
+
+
+   <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="grey-text">Footer Content</h5>
+                  <p class="grey-text text-lighten-4">
+
+                    <div class = "col s3"><a class="th" href="https://www.cshub.ca/"><%= image_tag "cshub.png", size: "75" %></a></div>
+                      <div class = "col s3"><a class="th" href="https://cshub-york.slack.com/signup"><%= image_tag "web-slack-icon.png", size: "75" %></a></div>
+                        <div class = "col s3"><a class="th" href="https://www.facebook.com/thecshub"><%= image_tag "facebook.png", size: "75", style: "border-radius: 25px" %></a></div>
+                  </p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+<div class = "row">
+  
+      <div class = "col s4">
+      <li><a class ="waves-effect waves-teal btn-flat" href="/about" data-reveal-id="aboutModal">About</a></li>
       <div id="aboutModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <h2 id="modalTitle">A little about us...</h2><hr>
         <p class="lead">We are the York University Computing Students' Hub</p>
@@ -16,8 +30,10 @@
         <div align ="center"><a class="th" href="https://www.cshub.ca/"><%= image_tag "cshub.png", size: "150x75" %></a></div>
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
       </div>
+</div>
+      <div class = "col s4">
 
-      <li><a class = "waves-effect waves-light btn" href="/contact" data-reveal-id="contactModal" style = "margin-top: 15px;">Contact</a></li>
+      <li><a class ="waves-effect waves-teal btn-flat" href="/contact" data-reveal-id="contactModal">Contact</a></li>
       <div id="contactModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <h2 id="modalTitle">Reach out to us!</h2><hr>
         <p class="lead">We want feedback. Right now.</p>
@@ -29,9 +45,24 @@
         <div align ="center"><a class="th" href="https://www.cshub.ca/"><%= image_tag "cshub.png", size: "150x75" %></a></div>
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
       </div>
+      </div>
       <!--<li><#%= link_to "About", main_app.about_path %></li>
       <li><#%= link_to "Contact", main_app.contact_path %></li>
       -->
-      <li><a class = "waves-effect waves-light btn" href="https://news.ycombinator.com/news" style = "margin-top: 15px;">News</a></li><br>
+      <div class = "col s4">
+      <li><a class ="waves-effect waves-teal btn-flat" href="https://news.ycombinator.com/news">News</a></li>
+      </div>
+      </div>
     </ul>
-  </nav> </footer>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2015 Philip Alekseev All Rights Reserved
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+  
+  
+  </footer>

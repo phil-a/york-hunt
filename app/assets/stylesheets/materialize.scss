@@ -482,7 +482,7 @@ textarea.materialize-textarea {
   label {
     color: $input-border-color;
     position: absolute;
-    top: 1.1rem;
+    top: .9 rem;
     left: $gutter-width / 2;
     font-size: 1rem;
     cursor: text;
@@ -490,7 +490,7 @@ textarea.materialize-textarea {
   }
   label.active {
     font-size: $label-font-size;
-    @include transform(translateY(-160%));
+    @include transform(translateY(-150%));
   }
 
   // Prefix Icons
@@ -1395,3 +1395,13 @@ $collection-hover-bg-color: #ddd !default;
 
 /* Progress Bar */
 $progress-bar-color: $secondary-color !default;
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }

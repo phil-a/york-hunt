@@ -46,3 +46,7 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+input[type=text] {
+line-height: 2.5em!important;
+}
