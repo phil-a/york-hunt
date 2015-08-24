@@ -1,7 +1,7 @@
-<nav class="breadcrumbs">
+<nav class="breadcrumbs z-depth-1" style="z-index: -1; background-color: rgba(227,242,253,.5); height: 20px; border-radius: 0px; margin-top: -20px;">
     <a href="/rapidfire/">Quiz</a>
     <a class="unavailable" href="/rapidfire/">Answer Questions</a>
-    <a class="unavailable" href="/rapidfire/"><%= @question_group.name %></a>
+    <a class="current" href="/rapidfire/"><%= @question_group.name %></a>
 </nav>
 <h2>Category: <%= @question_group.name %></h2>
 <hr/>

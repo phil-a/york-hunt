@@ -1,9 +1,7 @@
-
-
 <% provide(:title, @user.name) %>
-<nav class="breadcrumbs">
+<nav class="breadcrumbs z-depth-1" style="z-index: -1; background-color: rgba(227,242,253,.5); height: 20px; border-radius: 0px; margin-top: -20px;">
   <a href="/">Teams</a>
-   <a href="/"><%= @user.name %></a>
+   <a class="unavailable" href="/"><%= @user.name %></a>
 </nav>
 <div class="row">
   <aside class="col-md-4">

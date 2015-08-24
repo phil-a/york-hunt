@@ -482,6 +482,7 @@ textarea.materialize-textarea {
   label {
     color: $input-border-color;
     position: absolute;
+    margin-top: -5px;
     top: .9 rem;
     left: $gutter-width / 2;
     font-size: 1rem;
@@ -490,7 +491,7 @@ textarea.materialize-textarea {
   }
   label.active {
     font-size: $label-font-size;
-    @include transform(translateY(-150%));
+    @include transform(translateY(-170%));
   }
 
   // Prefix Icons
@@ -1552,5 +1553,59 @@ nav {
   }
   .navbar-fixed {
     height: $navbar-height;
+  }
+}
+
+
+// ---------- Pagination ----------
+
+// Pagination
+
+.pagination {
+
+  li {
+    float: left;
+    font-size: 1.2rem;
+    padding: 0em 0em;
+    line-height: 30px;
+    border-radius: 2px;
+    text-align: center;
+
+    a { color: #444; }
+
+    &.active a { color: #fff; }
+
+    &.active { background-color: transparent; }
+
+    &.disabled a {
+      cursor: default;
+      color: #999;
+    }
+
+    i {
+      font-size: 2rem;
+    }
+  }
+
+
+  li.pages ul li {
+    display: inline-block;
+    float: none;
+  }
+}
+@media #{$medium-and-down} {
+  .pagination {
+    width: 100%;
+
+    li.prev,
+    li.next {
+      width: 10%;
+    }
+
+    li.pages {
+      width: 80%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
   }
 }
