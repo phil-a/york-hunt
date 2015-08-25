@@ -38,6 +38,7 @@
           <thead>
             <tr>
               <th>User Name</th>
+              <th>QuestionGroup</th>
               <th>Answer_text</th>
             </tr>
           </thead>
@@ -46,6 +47,7 @@
           <%- (1..Rapidfire::AnswerGroup.count).each do |i|  %>
               <tr>
                   <td><%= User.find(Rapidfire::AnswerGroup.find(i).user_id).name %></td>
+                  <td><%=Rapidfire::QuestionGroup.find_by(id: (Rapidfire::AnswerGroup.find_by(id: i).question_group_id)).name %></td>
                   <td>
                       <%- (cnt..(Rapidfire::Answer).count).each do |j|  %>
                         <% break if ((Rapidfire::Answer.where(:answer_group_id => i).find_by_id(j)) == nil) %>

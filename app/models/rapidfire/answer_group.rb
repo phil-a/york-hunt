@@ -11,12 +11,12 @@ module Rapidfire
     after_save do
         user = User.find_by(id: (self.user_id))
         answers = Rapidfire::Answer.where(answer_group_id: self.id)
+        question_group = Rapidfire::QuestionGroup.find_by(id: (Rapidfire::AnswerGroup.find_by(id: self.id).question_group_id)).name
         answers_cnt = answers.count - 1
         correct_cnt = 0
         answers_text = []
         for i in (0..answers_cnt)
-          #answers_text << answers[i].answer_text + answers[i].correct?
-          answers_text << answers[i].correct?
+          answers_text << answers[i].correct? + ("<br \>".to_s.html_safe)
           if answers[i].correct? == "\u2705"
             correct_cnt = correct_cnt + 1
           end
@@ -24,9 +24,9 @@ module Rapidfire
 
         #Create Post
         if (correct_cnt == Rapidfire::Answer.where(answer_group_id: self.id).count) # correct answers
-          user.microposts.create!(content: user.name + " posted all correct answers! " + random_correct_message + answers_text.to_s)
+          user.microposts.create!(content: user.name + " posted all correct answers for " + question_group.to_s + random_correct_message + answers_text.to_s.html_safe)
         else  #incorrect answers
-          user.microposts.create!(content: user.name + " posted some incorrect answers. " + random_incorrect_message + answers_text.to_s)
+          user.microposts.create!(content: user.name + " posted some incorrect answers for " + question_group.to_s + random_incorrect_message + answers_text.to_s.html_safe)
         end
     end
 
@@ -36,7 +36,7 @@ module Rapidfire
     end
 
     def random_correct_message
-      correct = %w(Finally! You\ rock! Good\ stuff.)
+      correct = %w(Finally! Congratulations Good\ stuff.)
       return correct[rand(0..correct.count-1)]
     end
     

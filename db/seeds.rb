@@ -14,7 +14,7 @@
 #              activated: true,
 #              activated_at: Time.zone.now)
 
-User.create!(name:  "Philip",
+User.create!(name:  "Admin",
              email: "phil.alekseev@gmail.com",
              password:              "test123",
              password_confirmation: "test123",
@@ -67,11 +67,13 @@ User.create!(name:  "House Baratheon",
 # end
 
 #Microposts
-users = User.order(:created_at).take(6)
-50.times do
-    content = Faker::Lorem.sentence(5)
-    users.each { |user| user.microposts.create!(content: content) }
-end
+# users = User.order(:created_at).take(6)
+# 50.times do
+#     content = Faker::Lorem.sentence(5)
+#     users.each { |user| user.microposts.create!(content: content) }
+# end
+
+User.find_by_name("Admin").microposts.create!(content: "Welcome to the Scavenger Hunt. \r\n All your answers will be posted here for all to see. \r\n Good Luck.".html_safe)
 
 # Following relationships (all following all)
 for i in 1..(User.count-1)
@@ -112,6 +114,72 @@ solutions << Solution.create!(question_id: 5,
                  correct_answer_text: "option 1\r\noption 2")
 solutions << Solution.create!(question_id: 6,
                  correct_answer_text: "56")
+
+#------------ 2
+
+#Question Groups
+question_groups = []
+question_groups << Rapidfire::QuestionGroup.create(name: "Lassonde")
+
+#Questions & Solutions
+
+questions = []
+questions << Rapidfire::Question.create(question_group_id: 2, type: "Rapidfire::Questions::Select", question_text: "What year was York University Founded?", position: nil, answer_options: "1959\r\n1960\r\n1961\r\n1962", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"", :less_than_or_equal_to=>""})
+questions << Rapidfire::Question.create(question_group_id: 2, type: "Rapidfire::Questions::Short", question_text: "What is the current Presidents full name?", position: nil, answer_options: "Mamdouh Shoukri", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"", :less_than_or_equal_to=>""})
+questions << Rapidfire::Question.create(question_group_id: 2, type: "Rapidfire::Questions::Radio", question_text: "What is the York University Mascot?", position: nil, answer_options: "Lion\r\nBear\r\nTiger\r\nDeer\r\nWolf", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"", :less_than_or_equal_to=>""})
+questions << Rapidfire::Question.create(question_group_id: 2, type: "Rapidfire::Questions::Short", question_text: "Founders college is named after these famous artists", position: nil, answer_options: "Group of Seven", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"", :less_than_or_equal_to=>""})
+questions << Rapidfire::Question.create(question_group_id: 2, type: "Rapidfire::Questions::Checkbox", question_text: "Check all that are correct?", position: nil, answer_options: "option 1\r\noption 2\r\noption 3\r\noption 4", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"", :less_than_or_equal_to=>""})
+questions << Rapidfire::Question.create(question_group_id: 2, type: "Rapidfire::Questions::Numeric", question_text: "How many years has York been around?", position: nil, answer_options: "", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"1", :less_than_or_equal_to=>"100"})
+
+
+#Solutions
+solutions = []
+solutions << Solution.create!(question_id: 7,
+                 correct_answer_text: "1959")
+solutions << Solution.create!(question_id: 8,
+                 correct_answer_text: "Mamdouh Shoukri")
+solutions << Solution.create!(question_id: 9,
+                 correct_answer_text: "Lion")
+solutions << Solution.create!(question_id: 10,
+                 correct_answer_text: "Group of Seven")
+solutions << Solution.create!(question_id: 11,
+                 correct_answer_text: "option 1\r\noption 2")
+solutions << Solution.create!(question_id: 12,
+                 correct_answer_text: "56")
+
+
+#-----------------
+
+#Question Groups
+question_groups = []
+question_groups << Rapidfire::QuestionGroup.create(name: "Osgoode")
+
+#Questions & Solutions
+
+questions = []
+questions << Rapidfire::Question.create(question_group_id: 3, type: "Rapidfire::Questions::Select", question_text: "What year was York University Founded?", position: nil, answer_options: "1959\r\n1960\r\n1961\r\n1962", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"", :less_than_or_equal_to=>""})
+questions << Rapidfire::Question.create(question_group_id: 3, type: "Rapidfire::Questions::Short", question_text: "What is the current Presidents full name?", position: nil, answer_options: "Mamdouh Shoukri", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"", :less_than_or_equal_to=>""})
+questions << Rapidfire::Question.create(question_group_id: 3, type: "Rapidfire::Questions::Radio", question_text: "What is the York University Mascot?", position: nil, answer_options: "Lion\r\nBear\r\nTiger\r\nDeer\r\nWolf", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"", :less_than_or_equal_to=>""})
+questions << Rapidfire::Question.create(question_group_id: 3, type: "Rapidfire::Questions::Short", question_text: "Founders college is named after these famous artists", position: nil, answer_options: "Group of Seven", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"", :less_than_or_equal_to=>""})
+questions << Rapidfire::Question.create(question_group_id: 3, type: "Rapidfire::Questions::Checkbox", question_text: "Check all that are correct?", position: nil, answer_options: "option 1\r\noption 2\r\noption 3\r\noption 4", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"", :less_than_or_equal_to=>""})
+questions << Rapidfire::Question.create(question_group_id: 3, type: "Rapidfire::Questions::Numeric", question_text: "How many years has York been around?", position: nil, answer_options: "", validation_rules: {:presence=>"1", :minimum=>"", :maximum=>"", :greater_than_or_equal_to=>"1", :less_than_or_equal_to=>"100"})
+
+
+#Solutions
+solutions = []
+solutions << Solution.create!(question_id: 13,
+                 correct_answer_text: "1959")
+solutions << Solution.create!(question_id: 14,
+                 correct_answer_text: "Mamdouh Shoukri")
+solutions << Solution.create!(question_id: 15,
+                 correct_answer_text: "Lion")
+solutions << Solution.create!(question_id: 16,
+                 correct_answer_text: "Group of Seven")
+solutions << Solution.create!(question_id: 17,
+                 correct_answer_text: "option 1\r\noption 2")
+solutions << Solution.create!(question_id: 18,
+                 correct_answer_text: "56")
+
 
 
 
