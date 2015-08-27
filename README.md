@@ -21,6 +21,8 @@ This is a 'Scavenger Hunt' type application created for the Computing Students' 
 * ~~Add answer view to display answered questions by user.~~
 * ~~Validate posted team answer against correct answers on database.~~
 * ~~Post answer (correct/incorrect) to feed (along with random motivating message).~~
-* Add Results page to non-admin users
+* ~~Remove Unfollow functionality for non-admin users (and signup option when working with teams)~~
+* ~~Implement Views to incorporate MaterializeCSS
+* ~~Format Feed Display correctly~~
+* Display Results based on QuestionGroup id.
 * Add Solution Creation to QuestionGroup form.
-* Remove Unfollow functionality for non-admin users (and signup option when working with teams)
