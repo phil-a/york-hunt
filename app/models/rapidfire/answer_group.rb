@@ -15,8 +15,10 @@ module Rapidfire
         answers_cnt = answers.count - 1
         correct_cnt = 0
         answers_text = []
+        answers_text << "<br \>"
         for i in (0..answers_cnt)
-          answers_text << answers[i].correct? + ("<br \>".to_s.html_safe)
+        question_text = Rapidfire::Question.all.where(question_group_id: (Rapidfire::QuestionGroup.find_by(id: (Rapidfire::AnswerGroup.find_by(id: self.id).question_group_id)).id))[i].question_text
+          answers_text << answers[i].correct? + " " + question_text + ("<br \>".to_s.html_safe)
           if answers[i].correct? == "\u2705"
             correct_cnt = correct_cnt + 1
           end
@@ -24,9 +26,9 @@ module Rapidfire
 
         #Create Post
         if (correct_cnt == Rapidfire::Answer.where(answer_group_id: self.id).count) # correct answers
-          user.microposts.create!(content: user.name + " posted all correct answers for " + question_group.to_s + random_correct_message + answers_text.to_s.html_safe)
+          user.microposts.create!(content: user.name + " posted all correct answers for " + question_group.to_s + random_correct_message + answers_text.join(" ").to_s.html_safe)
         else  #incorrect answers
-          user.microposts.create!(content: user.name + " posted some incorrect answers for " + question_group.to_s + random_incorrect_message + answers_text.to_s.html_safe)
+          user.microposts.create!(content: user.name + " posted some incorrect answers for " + question_group.to_s + random_incorrect_message + answers_text.join(" ").to_s.html_safe)
         end
     end
 
