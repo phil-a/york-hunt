@@ -26,9 +26,9 @@ module Rapidfire
 
         #Create Post
         if (correct_cnt == Rapidfire::Answer.where(answer_group_id: self.id).count) # correct answers
-          user.microposts.create!(content: user.name + " posted all correct answers for " + question_group.to_s + random_correct_message + answers_text.join(" ").to_s.html_safe)
+          user.microposts.create!(content: user.name + " posted all correct answers for " + question_group.to_s + " " + random_correct_message + "." + answers_text.join(" ").to_s.html_safe)
         else  #incorrect answers
-          user.microposts.create!(content: user.name + " posted some incorrect answers for " + question_group.to_s + random_incorrect_message + answers_text.join(" ").to_s.html_safe)
+          user.microposts.create!(content: user.name + " posted some incorrect answers for " + question_group.to_s + ". " + random_incorrect_message + "." + answers_text.join(" ").to_s.html_safe)
         end
     end
 

@@ -23,13 +23,15 @@
 <div class="center jumbotron">
   <h1>Welcome to Frosh Week</h1>
 
-  <h2>
+  <h5>
     This is the home page for the
-    <a href="https://www.cshub.ca/"><%= image_tag "cshub.png" %></a>
+    <a href="https://www.cshub.ca/"><%= image_tag "cshub_logo.png", size: "300" %></a>
     Scavenger Hunt application.
-  </h2>
+  </h5>
+  
+  <h5>Please  <%= link_to "Login", login_path, :class => "item" %> with the provided credentials. </h5>
 
-  <%= link_to "Sign up now!", signup_path, class: "button large" %>
+  <%#= link_to "Sign up now!", signup_path, class: "button large" %>
 </div>
 
 <%= link_to image_tag("rails.png", alt: "Rails logo"),
