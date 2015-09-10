@@ -16,40 +16,40 @@
 
 User.create!(name:  "Admin",
              email: "phil.alekseev@gmail.com",
-             password:              "test123",
-             password_confirmation: "test123",
+             password:              "pass123",
+             password_confirmation: "pass123",
              admin: true,
              activated: true,
              activated_at: Time.zone.now)
              
 User.create!(name:  "House Stark",
              email: "yorku.house.stark@gmail.com",
-             password:              "test123",
-             password_confirmation: "test123",
+             password:              "pass123",
+             password_confirmation: "pass123",
              admin: false,
              activated: true,
              activated_at: Time.zone.now)
 
 User.create!(name:  "House Lannister",
              email: "yorku.house.lannister@gmail.com",
-             password:              "test123",
-             password_confirmation: "test123",
+             password:              "pass123",
+             password_confirmation: "pass123",
              admin: false,
              activated: true,
              activated_at: Time.zone.now)
 
 User.create!(name:  "House Targaryen",
              email: "yorku.house.targaryen@gmail.com",
-             password:              "test123",
-             password_confirmation: "test123",
+             password:              "pass123",
+             password_confirmation: "pass123",
              admin: false,
              activated: true,
              activated_at: Time.zone.now)
 
 User.create!(name:  "House Baratheon",
              email: "yorku.house.baratheon@gmail.com",
-             password:              "test123",
-             password_confirmation: "test123",
+             password:              "pass123",
+             password_confirmation: "pass123",
              admin: false,
              activated: true,
              activated_at: Time.zone.now)
