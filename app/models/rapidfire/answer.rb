@@ -23,7 +23,7 @@ module Rapidfire
     end
     
     def correct?
-        if (self.answer_text.downcase.strip == self.get_solution.correct_answer_text.downcase.strip)
+        if (self.answer_text.downcase.strip.split.join(" ") == self.get_solution.correct_answer_text.downcase.strip.split.join(" "))
             return "\u2705"
         else
             return "\u274C"
