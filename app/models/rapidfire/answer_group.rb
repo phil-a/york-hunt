@@ -33,12 +33,12 @@ module Rapidfire
     end
 
     def random_incorrect_message
-      incorrect = %w(You\ suck! Go\ back\ and\ try\ again. You\ needs\ some\ learning.)
+      incorrect = %w(Think\ harder! What\ were\ you\ thinking? Go\ back\ and\ try\ again. You\ needs\ some\ learning. Uh-oh)
       return incorrect[rand(0..incorrect.count-1)]
     end
 
     def random_correct_message
-      correct = %w(Finally! Congratulations Good\ stuff.)
+      correct = %w(You\ finally\ got\ it! Congratulations! Good\ team\ work! If\ only\ you\ did\ so\ well\ in\ Calculus.  )
       return correct[rand(0..correct.count-1)]
     end
     
