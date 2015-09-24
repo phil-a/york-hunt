@@ -64,7 +64,7 @@ activated_at: Time.zone.now)
 #     content = Faker::Lorem.sentence(5)
 #     users.each { |user| user.microposts.create!(content: content) }
 # end
-User.find_by_name("Admin").microposts.create!(content: "Welcome to the Scavenger Hunt. \r\nn All your answers will be posted here for all to see. \r\nn Good Luck.".html_safe)
+User.find_by_name("Admin").microposts.create!(content: "Welcome to the Scavenger Hunt. \r\n All your answers will be posted here for all to see. \r\n Good Luck.".html_safe)
 # Following relationships (all following all)
 for i in 1..(User.count-1)
     users = User.all
